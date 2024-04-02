@@ -53,7 +53,7 @@ if __name__ == "__main__":
 
     # Extract shorts URLs from each channel
     for video_type in video_types:
-        print(f"Extracting shorts URLs from {channel_url}/{video_type}")
+        print(f"Extracting URLs from {channel_url}/{video_type}")
         extracted_urls += extract_shorts_urls(channel_url, video_type)
 
     with open('../app-viewer/urls.txt', 'w') as f:
