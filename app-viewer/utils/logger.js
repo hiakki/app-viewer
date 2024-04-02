@@ -14,7 +14,7 @@ const debug = (message) => {
 const warn = (message) => console.log(`${chalk.yellow.inverse(` [${(new Date()).toLocaleTimeString()}] - WARN    `)} ${chalk.yellow(message)}`);
 
 const logFailedAttempt = (url, ipAddr) => {
-  warn(`An attempt to view ${url} with IP: ${ipAddr} was probably blocked.`);
+  warn(`An attempt to view APP with IP: ${ipAddr} was probably blocked.`);
 };
 
 const logCount = async (page, url, ipAddr, duration) => {
@@ -23,7 +23,7 @@ const logCount = async (page, url, ipAddr, duration) => {
     if (!store[url]) store[url] = { initial: currentLiveViewCount };
     store[url].current = currentLiveViewCount;
     store[url].added = store[url].current - store[url].initial;
-    success(`Attempted ${url} with IP: ${ipAddr} for ${duration} seconds. (Init View Count: ${store[url].initial} Current View Count: ${store[url].current} Views added this session: ${store[url].added})`);
+    success(`Attempted APP with IP: ${ipAddr} for ${duration} seconds. (Init View Count: ${store[url].initial} Current View Count: ${store[url].current} Views added this session: ${store[url].added})`);
   } catch {
     logFailedAttempt(url, ipAddr);
   }
