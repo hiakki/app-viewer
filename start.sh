@@ -7,5 +7,5 @@ if [ $# -ne 1 ]; then
 fi
 
 # Start the bot
-cd ../app-viewer
-docker-compose up --scale app=$2 -d
+cd ./app-viewer
+docker-compose up --scale app=$1 -d

@@ -7,7 +7,7 @@ if [ $# -ne 1 ]; then
 fi
 
 # Start the bot
-cd ../app-viewer
+cd ./app-viewer
 docker-compose down
 image_id=$(docker images | grep app | awk '{print $3}')
 if [ -n "$image_id" ]; then
@@ -17,4 +17,4 @@ if [ -n "$image_id" ]; then
         exit 1
     fi
 fi
-docker-compose up --scale app=$2 -d
+docker-compose up --scale app=$1 -d
